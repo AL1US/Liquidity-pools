@@ -1,0 +1,58 @@
+// contracts/GLDToken.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
+
+import "puls/Token.sol";
+import "puls/Pool.sol";
+
+contract Factory {
+
+    // token objects
+    Token public gerdaCoin;
+    Token public krendelCoin;
+    Token public rtkCoin;
+    Token public professionalCoin;
+
+    // poll objects
+    Pool public poolGerKre;  
+    Pool public poolKreRtk;
+
+
+    struct user {
+        string name;
+    }
+
+    mapping (address => user) public users;
+
+    uint decimals = 12;
+
+
+    constructor() {
+        gerdaCoin = new Token("GerdaCoin", "GERDA", 100_000, 1);
+        krendelCoin = new Token("KrendelCoin", "KRENDEL", 150_000, 2);
+        rtkCoin = new Token("RTKCoin", "RTK", 300_000, 3);
+        professionalCoin = new Token("Professional", "PROFI", 300_000, 6);
+
+        // создание пользователей
+        users[0x5B38Da6a701c568545dCfcB03FcB875f56beddC4] = user("Tom");
+        users[0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2] = user("Ben");
+        users[0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB] = user("Rick");
+
+        // создание пулов
+        poolGerKre = new Pool("poolGerKre", gerdaCoin, krendelCoin);
+        poolKreRtk = new Pool("poolKreRtk", krendelCoin, rtkCoin);
+
+        // перевод токенов в пулы
+        gerdaCoin.transfer(address(poolGerKre), 50000 * 10 ** 12);
+        krendelCoin.transfer(address(poolGerKre), 50000 * 10 ** 12);
+        rtkCoin.transfer(address(poolKreRtk), 50000 *10 ** 12);
+        krendelCoin.transfer(address(poolKreRtk), 50000 * 10 ** 12);
+    }
+
+    function getBalanceTokenInPool(Token _token, Pool _pool) public view returns(uint) {
+        // проверка на то есть ли такой токен в таком пуле
+        // require ...
+        return  _token.balanceOf(address(_pool));
+    }
+
+}
