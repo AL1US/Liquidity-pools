@@ -12,12 +12,14 @@ contract Pool {
     Token token1;
     Token token2;
     uint decimals = 12;
+    Token public professionalCoin;
 
-    constructor (string memory _name, address _owner, Token _token_first, Token _token_second) {
+    constructor (string memory _name, address _owner, Token _token_first, Token _token_second, Token lpProfi) {
         name = _name;
         token1 = _token_first;
         token2 = _token_second;
         owner = _owner;
+        professionalCoin = lpProfi;
     }
 
 
@@ -62,6 +64,47 @@ contract Pool {
         }
     }
 
-    // поддержка ликвидности
+    function getTokenBalance(Token _token) public view returns(uint) {
+        return _token.balanceOf(msg.sender);
+    }
+
+
+    function liquidityUp(address _token, uint _amount) public {
+        uint amount = _amount * 10 ** decimals;
+
+        // проверка того существуют ли токены в пуле
+        require(
+            _token == address(token1) || _token == address(token2),
+            "invalid token"
+        );
+
+        // создание объекта для удобства
+        Token inputToken = Token(_token);
+
+        // проверка того достаточно ли токенов у отправителя
+        require(
+            inputToken.balanceOf(msg.sender) >= amount,
+            "not enough tokens"
+        );
+
+        // переводим токены от нас к пулу
+        inputToken.transferFrom(msg.sender, address(this), amount);
+
+        // получаем ценц токена
+        uint tokenPrice;
+
+        if (_token == address(token1)) {
+            tokenPrice = token1.getPrice();
+        } else {
+            tokenPrice = token2.getPrice();
+        }
+
+        // cчитаем всё в соотношении с ценой
+        // стоимость вклада = amount * priceToken
+        // LP к выдаче = стоимость вклада / priceLP
+        uint lpTokensOut = (amount * tokenPrice) / professionalCoin.getPrice();
+
+        professionalCoin.mint(msg.sender, lpTokensOut);
+    }
 
 }

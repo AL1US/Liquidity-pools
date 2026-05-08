@@ -12,8 +12,16 @@ contract Token is ERC20 {
 
     constructor(string memory _name, string memory _symbol, uint _initialSupply, uint _price) ERC20(_name, _symbol) {
         _mint(msg.sender, _initialSupply * 10 ** _decimals);
-        price = _price * 10 ** 18;
+        price = _price;
         initialSupply = _initialSupply;
+    }
+
+    function getPrice() public view returns (uint) {
+        return price;
+    }
+
+    function mint(address to, uint amount) public {
+        _mint(to, amount);
     }
 
     // function buyToken()
