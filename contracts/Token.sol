@@ -16,4 +16,6 @@ contract Token is ERC20 {
         initialSupply = _initialSupply;
     }
 
+    // function buyToken()
+
 }

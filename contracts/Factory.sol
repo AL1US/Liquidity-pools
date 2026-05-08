@@ -39,20 +39,14 @@ contract Factory {
         users[0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB] = user("Rick");
 
         // создание пулов
-        poolGerKre = new Pool("poolGerKre", gerdaCoin, krendelCoin);
-        poolKreRtk = new Pool("poolKreRtk", krendelCoin, rtkCoin);
+        poolGerKre = new Pool("poolGerKre", 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, gerdaCoin, krendelCoin); // владелец том
+        poolKreRtk = new Pool("poolKreRtk", 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2, krendelCoin, rtkCoin); // владелец бен
 
         // перевод токенов в пулы
         gerdaCoin.transfer(address(poolGerKre), 50000 * 10 ** 12);
         krendelCoin.transfer(address(poolGerKre), 50000 * 10 ** 12);
         rtkCoin.transfer(address(poolKreRtk), 50000 *10 ** 12);
         krendelCoin.transfer(address(poolKreRtk), 50000 * 10 ** 12);
-    }
-
-    function getBalanceTokenInPool(Token _token, Pool _pool) public view returns(uint) {
-        // проверка на то есть ли такой токен в таком пуле
-        // require ...
-        return  _token.balanceOf(address(_pool));
     }
 
 }
