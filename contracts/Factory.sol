@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-import "puls/Token.sol";
-import "puls/Pool.sol";
+import "./Token.sol";
+import "./Pools.sol";
 
 contract Factory {
 

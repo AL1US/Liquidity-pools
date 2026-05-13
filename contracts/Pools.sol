@@ -2,8 +2,8 @@
 pragma solidity ^0.8.28;
 
 
-import "puls/Token.sol";
-import "puls/Factory.sol";
+import "./Token.sol";
+import "./Factory.sol";
 
 contract Pool {
     

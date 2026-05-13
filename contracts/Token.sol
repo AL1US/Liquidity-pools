@@ -25,5 +25,20 @@ contract Token is ERC20 {
     }
 
     // function buyToken()
+    function buyToken(uint _amount) public payable {
+        // посчитать количество того, сколько пользователь должен заплатить за токен
+        address _token = address(this);
+        uint amount = _amount * 10 ** decimals;
+        uint price = _amount * getPrice();
+
+        // проверить, есть ли такое количество токенов у пользователя
+        require(msg.value >= price, unicode"У вас не достаточно ETH для покупки данного количества токенов");
+        
+        if (msg.value > price) {
+            payable(msg.sender).transfer(msg.value - price); // переводим остаток обратно, при его наличии
+        }
+
+        _mint(msg.sender, amount); // минтим новые токены пользователю
+    }
 
 }
