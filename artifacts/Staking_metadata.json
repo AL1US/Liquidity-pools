@@ -8,28 +8,8 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					},
-					{
 						"internalType": "contract Token",
-						"name": "_token_first",
-						"type": "address"
-					},
-					{
-						"internalType": "contract Token",
-						"name": "_token_second",
-						"type": "address"
-					},
-					{
-						"internalType": "contract Token",
-						"name": "lpProfi",
+						"name": "professionalCoin",
 						"type": "address"
 					}
 				],
@@ -37,14 +17,8 @@
 				"type": "constructor"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "contract Token",
-						"name": "_token",
-						"type": "address"
-					}
-				],
-				"name": "getTokenBalance",
+				"inputs": [],
+				"name": "calculateReward",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -56,26 +30,47 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_token",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "liquidityUp",
+				"inputs": [],
+				"name": "claimReward",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "professionalCoin",
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "lastRewardTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "profi",
 				"outputs": [
 					{
 						"internalType": "contract Token",
@@ -89,19 +84,46 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_swapToken",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
 					}
 				],
-				"name": "swap_token",
+				"name": "stake",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "stakes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalStaked",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -118,7 +140,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Pools.sol": "Pool"
+			"contracts/Staking.sol": "Staking"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -172,12 +194,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/Pools.sol": {
-			"keccak256": "0xcea920cb8fc12f065309b8735d80c2038998bcb849be46042867bbdbb06f5c3e",
+		"contracts/Staking.sol": {
+			"keccak256": "0x7fdb161d342d76762b33aedb69dfd76f29176acf6bfcb39f2b4caf61faae4a4b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ef8f193ee1b41dcf1c2f0114c22df87fe960177d2fe450ae6ebbe9dad4821eff",
-				"dweb:/ipfs/QmczAS8WGYLCBg3tzZLyDtxnSZCH7ZKezDPnSsZ7HCLVSX"
+				"bzz-raw://2b1f4948f208c203e9be7a6b0c382d4aac37cbefa7038e02fad134c57b3dd9da",
+				"dweb:/ipfs/QmPcrD5FpU7CyL9PexnZHfbFE3L7TAzxNotGG7ATMFiuLh"
 			]
 		},
 		"contracts/Token.sol": {

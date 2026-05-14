@@ -3,7 +3,6 @@ pragma solidity ^0.8.28;
 
 
 import "./Token.sol";
-import "./Factory.sol";
 
 contract Pool {
     
@@ -23,7 +22,7 @@ contract Pool {
     }
 
 
-    function swap_token(address _swapToken, address _pool, uint _amount) public  {
+    function swap_token(address _swapToken, uint _amount) public  {
         uint amount = _amount * 10 ** uint(decimals);
 
         // проверка на то есть ли такое кол-во токенов у пользователя
@@ -38,8 +37,8 @@ contract Pool {
             "invalid token"
         );
 
-        uint balanceToken1 = Token(token1).balanceOf(_pool);
-        uint balanceToken2 =  Token(token2).balanceOf(_pool);
+        uint balanceToken1 = Token(token1).balanceOf(address(this));
+        uint balanceToken2 =  Token(token2).balanceOf(address(this));
         
         if (_swapToken == address(token1)) {
             uint tokensOut = 
@@ -47,9 +46,9 @@ contract Pool {
                             / 
             (token2.getPrice() * balanceToken1);
             
-            require(Token(token2).balanceOf(_pool) >= tokensOut, "the pool doesn't have enough tokens to exchange");
+            require(Token(token2).balanceOf(address(this)) >= tokensOut, "the pool doesn't have enough tokens to exchange");
             
-            Token(token1).transferFrom(msg.sender, _pool, amount); // от пользователя к пулу
+            Token(token1).transferFrom(msg.sender, address(this), amount); // от пользователя к пулу
             Token(token2).transfer(msg.sender, tokensOut); // от пула к пользователю 
         } else {
             uint tokensOut = 
@@ -57,9 +56,9 @@ contract Pool {
                             / 
             (token1.getPrice() * balanceToken2);
                     
-            require(Token(token1).balanceOf(_pool) >= tokensOut, "the pool doesn't have enough tokens to exchange");
+            require(Token(token1).balanceOf(address(this)) >= tokensOut, "the pool doesn't have enough tokens to exchange");
             
-            Token(token2).transferFrom(msg.sender, _pool, amount);
+            Token(token2).transferFrom(msg.sender, address(this), amount);
             Token(token1).transfer(msg.sender, tokensOut);
         }
     }

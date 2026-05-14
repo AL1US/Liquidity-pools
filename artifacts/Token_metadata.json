@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.30+commit.73712a01"
+		"version": "0.8.34+commit.80d5c536"
 	},
 	"language": "Solidity",
 	"output": {
@@ -235,6 +235,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "buyToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -244,12 +257,31 @@
 						"type": "uint8"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [],
 				"name": "getPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "getPriceInBuyToken",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -476,7 +508,7 @@
 		"compilationTarget": {
 			"contracts/Token.sol": "Token"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "osaka",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -529,11 +561,11 @@
 			]
 		},
 		"contracts/Token.sol": {
-			"keccak256": "0x466573bdccedf38f2e7e811bcbca937d0b6e23605d15d516d9373aaa32ff3d73",
+			"keccak256": "0xea05dc11426f5610dbe894798cbd7693e8537fdbd80ddae1add20a75191d8dcd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a5cd7b653c1812816194a1b9cd566ba211af3cad1807eb5f627e438a5054e35e",
-				"dweb:/ipfs/Qmd9EQYXNcvwscK1VGhK98MLcy1v3weCbhq14RBeWjkSg1"
+				"bzz-raw://3408d0795ebeffbc17c40685e8d2fd9a2ee873efbb3f49a9fe89c375a52952f0",
+				"dweb:/ipfs/QmZcmQkuQhWsvhjCFukMhy6RfmVP5USSYN92d671pjihcL"
 			]
 		}
 	},

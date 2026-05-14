@@ -16,6 +16,11 @@ contract Token is ERC20 {
         initialSupply = _initialSupply;
     }
 
+
+    function decimals() public pure override returns (uint8) {
+        return _decimals;
+    }
+
     function getPrice() public view returns (uint) {
         return price;
     }
@@ -24,12 +29,15 @@ contract Token is ERC20 {
         _mint(to, amount);
     }
 
+    function getPriceInBuyToken(uint _amount) public view returns(uint) {
+        return _amount * getPrice();
+    }
+
     // function buyToken()
     function buyToken(uint _amount) public payable {
         // посчитать количество того, сколько пользователь должен заплатить за токен
-        address _token = address(this);
-        uint amount = _amount * 10 ** decimals;
-        uint price = _amount * getPrice();
+        uint amount = _amount * 10 ** decimals();
+        uint price = getPriceInBuyToken(_amount);
 
         // проверить, есть ли такое количество токенов у пользователя
         require(msg.value >= price, unicode"У вас не достаточно ETH для покупки данного количества токенов");
