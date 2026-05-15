@@ -12,5 +12,11 @@
   "contracts@0.4.0/Sta.sol": ".deps/npm/contracts@0.4.0/Sta.sol",
   "contracts@0.4.0/Stak.sol": ".deps/npm/contracts@0.4.0/Stak.sol",
   "contracts@0.4.0/Staki.sol": ".deps/npm/contracts@0.4.0/Staki.sol",
-  "contracts@0.4.0/Stakin.sol": ".deps/npm/contracts@0.4.0/Stakin.sol"
+  "contracts@0.4.0/Stakin.sol": ".deps/npm/contracts@0.4.0/Stakin.sol",
+  "blockchain@1.0.6/contracts/.sol": ".deps/npm/blockchain@1.0.6/contracts/.sol",
+  "blockchain@1.0.6/contracts/R.sol": ".deps/npm/blockchain@1.0.6/contracts/R.sol",
+  "blockchain@1.0.6/contracts/Ro.sol": ".deps/npm/blockchain@1.0.6/contracts/Ro.sol",
+  "blockchain@1.0.6/contracts/Rou.sol": ".deps/npm/blockchain@1.0.6/contracts/Rou.sol",
+  "blockchain@1.0.6/contracts/Rout.sol": ".deps/npm/blockchain@1.0.6/contracts/Rout.sol",
+  "blockchain@1.0.6/contracts/Route.sol": ".deps/npm/blockchain@1.0.6/contracts/Route.sol"
 }

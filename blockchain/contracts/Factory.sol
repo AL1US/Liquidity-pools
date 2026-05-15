@@ -5,6 +5,7 @@ pragma solidity ^0.8.28;
 import "./Token.sol";
 import "./Pools.sol";
 import "./Staking.sol";
+import "./Router.sol";
 
 
 contract Factory {
@@ -20,6 +21,8 @@ contract Factory {
     Pool public poolKreRtk;
 
     Staking public staking;
+
+    Router public router;
 
     struct user {
         string name;
@@ -43,10 +46,16 @@ contract Factory {
         
         staking = new Staking(professionalCoin);   
 
-        // создание пользователей
-        address tom = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
-        address ben = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
-        address rick = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB;
+        // создание пользователей remix
+        // address tom = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+        // address ben = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
+        // address rick = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB;
+
+        // hardhat
+        address tom = 0x70997970C51812dc3A010C7d01b50e0d17dc79C8;
+        address ben = 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC;
+        address rick = 0x90F79bf6EB2c4f870365E785982E1f101E93b906;
+
 
         users[tom] = user("Tom");
         users[ben] = user("Ben");
