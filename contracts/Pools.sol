@@ -63,6 +63,53 @@ contract Pool {
         }
     }
 
+        function swapFrom(
+        address user,
+        address tokenIn,
+        uint amount,
+        address recipient
+    ) public returns (uint) {
+        uint realAmount = amount * 10 ** decimals;
+
+        require(
+            tokenIn == address(token1) || tokenIn == address(token2),
+            "invalid token"
+        );
+
+        uint balanceToken1 = token1.balanceOf(address(this));
+        uint balanceToken2 = token2.balanceOf(address(this));
+
+        if (tokenIn == address(token1)) {
+            tokensOut =
+                (realAmount * token1.getPrice() * balanceToken2) /
+                (token2.getPrice() * balanceToken1);
+
+            require(balanceToken2 >= tokensOut, "not enough liquidity");
+
+            token1.transferFrom(user, address(this), realAmount);
+            token2.transfer(recipient, tokensOut);
+        } else {
+            tokensOut =
+                (realAmount * token2.getPrice() * balanceToken1) /
+                (token1.getPrice() * balanceToken2);
+
+            require(balanceToken1 >= tokensOut, "not enough liquidity");
+
+            token2.transferFrom(user, address(this), realAmount);
+            token1.transfer(recipient, tokensOut);
+        }
+
+        return tokensOut;
+    }
+
+    function getToken1() public view returns (address) {
+        return address(token1);
+    }
+
+    function getToken2() public view returns (address) {
+        return address(token2);
+    }
+
     function getTokenBalance(Token _token) public view returns(uint) {
         return _token.balanceOf(msg.sender);
     }

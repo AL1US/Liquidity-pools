@@ -29,6 +29,11 @@ contract Factory {
 
     uint decimals = 12;
 
+    Pool[] public pools;
+
+    function getPools() public view returns (Pool[] memory) {
+        return pools;
+    }   
 
     constructor() {
         gerdaCoin = new Token("GerdaCoin", "GERDA", 100_000, 1 ether);
@@ -73,6 +78,10 @@ contract Factory {
             rtkCoin,
             professionalCoin
         ); // владелец бен
+
+        // пуш пуллов в массив
+        pools.push(poolGerKre);
+        pools.push(poolKreRtk);
 
         // перевод токенов в пулы
         
