@@ -26,6 +26,7 @@ contract Factory {
 
     struct user {
         string name;
+        bool exists;л
     }
 
     mapping (address => user) public users;
@@ -36,7 +37,16 @@ contract Factory {
 
     function getPools() public view returns (Pool[] memory) {
         return pools;
-    }   
+    }
+
+    function register(address _address, string memory _name) public {
+        require(!users[_address].exists, "this user already exist");
+
+        users[_address] =  user(_name, true);        
+    }
+
+    function getMyData()
+
 
     constructor() {
         gerdaCoin = new Token("GerdaCoin", "GERDA", 100_000, 1 ether);
@@ -56,10 +66,9 @@ contract Factory {
         address ben = 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC;
         address rick = 0x90F79bf6EB2c4f870365E785982E1f101E93b906;
 
-
-        users[tom] = user("Tom");
-        users[ben] = user("Ben");
-        users[rick] = user("Rick");
+        users[tom] = user("Tom", true);
+        users[ben] = user("Ben", true);
+        users[rick] = user("Rick", true);
 
         uint tokenAmount = 10000 * 10 ** 12;
 

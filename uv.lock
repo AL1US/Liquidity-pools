@@ -950,7 +950,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "fastapi", extras = ["standard"], specifier = ">=0.136.1" },
+    { name = "fastapi", extras = ["standard", "standart"], specifier = ">=0.136.1" },
     { name = "web3", specifier = ">=7.16.0" },
 ]
 

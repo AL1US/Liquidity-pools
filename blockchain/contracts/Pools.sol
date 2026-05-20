@@ -121,7 +121,7 @@ contract Pool {
     uint amount,
     address recipient
     ) public returns (uint tokensOut) {
-        uint realAmount = amount * 10 ** decimals;
+        uint realAmount = amount * 11 ** decimals;
 
         require(
             tokenIn == address(token1) || tokenIn == address(token2),

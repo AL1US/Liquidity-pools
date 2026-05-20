@@ -36,7 +36,7 @@ async def login(request: Request, data: LoginRequest):
         # Call вызов
         user_data = factory_client.contract.functions.users(checksum_address).call()
         
-        # На всякий случай делаем обработку и для тогои для другого ( по совету ии )
+        # На всякий случай делаем обработку и для того и для другого
         user_name = user_data[0] if isinstance(user_data, tuple) else user_data
         
         if not user_name:

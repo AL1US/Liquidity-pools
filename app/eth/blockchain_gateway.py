@@ -46,3 +46,13 @@ staking_client = BaseContractClient(
     json_contract_path=BASE_DIR / "Staking.sol/Staking.json",
     contract_address=CONTRACT_ADDRESSES["staking"]
 )
+
+poolKreRtk_client = BaseContractClient(
+    json_contract_path=BASE_DIR / "Pools.sol/Pool.json",
+    contract_address=CONTRACT_ADDRESSES["pools"]["poolKreRtk"]
+)
+
+poolGerKre_client = BaseContractClient(
+    json_contract_path=BASE_DIR / "Pools.sol/Pool.json",
+    contract_address=CONTRACT_ADDRESSES["pools"]["poolGerKre"]
+)
