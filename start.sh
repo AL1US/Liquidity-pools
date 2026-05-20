@@ -7,11 +7,11 @@ cd blockchain
 echo "Cleaning Hardhat artifacts/cache..."
 npx hardhat clean
 
-# echo "Installing dependencies..."
-# npm install
+echo "Installing dependencies..."
+npm install
 
-# echo "Installing OpenZeppelin..."
-# npm install @openzeppelin/contracts
+echo "Installing OpenZeppelin..."
+npm install @openzeppelin/contracts
 
 echo "Compiling contracts..."
 npx hardhat compile

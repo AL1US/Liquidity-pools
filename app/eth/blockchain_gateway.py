@@ -12,10 +12,8 @@ ADDRESSES_JSON_PATH = BLOCKCHAIN_DIR / "addresses/addresses.json"
 
 PROVIDER_URL = "http://127.0.0.1:8545"
 
-
 with open(ADDRESSES_JSON_PATH, "r") as f:
     CONTRACT_ADDRESSES = json.load(f)
-
 
 class BaseContractClient:
     def __init__(self, json_contract_path: Path, contract_address: str):
@@ -37,12 +35,12 @@ class BaseContractClient:
 factory_client = BaseContractClient(
     json_contract_path=BASE_DIR / "Factory.sol/Factory.json",
     contract_address=CONTRACT_ADDRESSES["factory"]
-)       
+)
 
 router_client = BaseContractClient(
     json_contract_path=BASE_DIR / "Router.sol/Router.json",
     contract_address=CONTRACT_ADDRESSES["router"]
-)       
+)
 
 staking_client = BaseContractClient(
     json_contract_path=BASE_DIR / "Staking.sol/Staking.json",
