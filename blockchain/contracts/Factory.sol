@@ -26,7 +26,7 @@ contract Factory {
 
     struct user {
         string name;
-        bool exists;л
+        bool exists;
     }
 
     mapping (address => user) public users;
