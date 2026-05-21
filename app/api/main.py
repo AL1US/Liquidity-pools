@@ -24,7 +24,7 @@ async def index(request: Request):
         name="index.html",
         context={"request": request}
     )
-    
+
 @app.post("/login")
 async def login(request: Request, data: LoginRequest):
     user_address = data.public_key

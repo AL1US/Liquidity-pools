@@ -45,9 +45,6 @@ contract Factory {
         users[_address] =  user(_name, true);        
     }
 
-    function getMyData()
-
-
     constructor() {
         gerdaCoin = new Token("GerdaCoin", "GERDA", 100_000, 1 ether);
         krendelCoin = new Token("KrendelCoin", "KRENDEL", 150_000, 15e17);
