@@ -16,7 +16,40 @@
 ### Router
 Контракт, который создаёт правильные маршруты для обмена двух токенов, из разных пулов
 
-# Запуск fastapi
+# Запуск hardhat
+
+Для запуска локальной сети hardhat 
+
+Инициализацися проекта
+```
+npx hardhat --init
+```
+Перед повторным запуском сети, её нужно всегда чистить
+```
+npx hardhat clean
+```
+Запуск сети
+```
+npx hardhat node
+```
+
+В другом терминале:
+
+Установить зависимости openzeppelin
+```
+npm install @openzeppelin/contracts
+```
+Компиляция
+```
+npx hardhat compile
+```
+Деплой - специальный скрипт 
+```
+npx hardhat run --network localhost scripts/deploy.js
+```
+
+# Запуск fastAPI
+
 ```
 uv run fastapi dev app/api/main.py --reload
 ```
