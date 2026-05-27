@@ -97,11 +97,11 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
 [32meth_sendTransaction[0m
   Contract deployment: Factory
   Contract address:    0x5fbdb2315678afecb367f032d93f642f64180aa3
-  Transaction:         0x6952e0258c0a2be6002fad9580198d069ef2d90ed72963ec24afd8db7af192c3
+  Transaction:         0x3c2544a1c75e7eda6ffec87208dff2461070d3a78c94480d8bfbff866252d9b0
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
-  Gas used:            11233934 of 16777216
-  Block #1:            0x8ecfc11ae68720d5adeb1b0d18ee3a3c351bb7aea2fd41d575da0b977a9afca4
+  Gas used:            11634861 of 16777216
+  Block #1:            0x77627fa72c0653d251bb25b229c8a66ce10fd96107d9dbd4a77d98014778f2cf
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -131,11 +131,11 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
 [32meth_sendTransaction[0m
   Contract deployment: Router
   Contract address:    0xe7f1725e7734ce288f8367e1bb143e90bb3f0512
-  Transaction:         0x1e1e24e579a0bd13ae743782e77b118812931889ac21c6b72ef9552a3843e326
+  Transaction:         0xddcda4d5cbed0c9ff5e3085562b78e5e81ba49f05ab6a91425b47b1273d1a2a3
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
-  Gas used:            953678 of 16777216
-  Block #2:            0x76e5ec76d9efcbea7fcec312290f870bb30ce6629dfaabfbb5e70aa288ab70cd
+  Gas used:            953690 of 16777216
+  Block #2:            0x3a816be5110f17f30600bac8edb11d839013e194736a0f737e6e11538ca10364
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -177,3 +177,15 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
 [32mweb3_clientVersion[0m
 [32mweb3_clientVersion (2)[0m
 [32mweb3_clientVersion (3)[0m
+[32mweb3_clientVersion (4)[0m
+[32mweb3_clientVersion (5)[0m
+[32mweb3_clientVersion (6)[0m
+[32mweb3_clientVersion (7)[0m
+[32mweb3_clientVersion (8)[0m
+[32mweb3_clientVersion (9)[0m
+[32mweb3_clientVersion (10)[0m
+[32mweb3_clientVersion (11)[0m
+[32mweb3_clientVersion (12)[0m
+[32mweb3_clientVersion (13)[0m
+[32mweb3_clientVersion (14)[0m
+[32mweb3_clientVersion (15)[0m
