@@ -101,7 +101,7 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
   Gas used:            11634861 of 16777216
-  Block #1:            0x77627fa72c0653d251bb25b229c8a66ce10fd96107d9dbd4a77d98014778f2cf
+  Block #1:            0x08afaaa5aa670beb7014a6cf7fcc07ac63880651f7640146d403e984fde0b032
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -135,7 +135,7 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
   Gas used:            953690 of 16777216
-  Block #2:            0x3a816be5110f17f30600bac8edb11d839013e194736a0f737e6e11538ca10364
+  Block #2:            0x45be307714b9006365de5dbecfa26ea1d9d4d27a70f57939fe1a2954b48b8059
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -174,18 +174,3 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   To:                  0x5fbdb2315678afecb367f032d93f642f64180aa3
 
-[32mweb3_clientVersion[0m
-[32mweb3_clientVersion (2)[0m
-[32mweb3_clientVersion (3)[0m
-[32mweb3_clientVersion (4)[0m
-[32mweb3_clientVersion (5)[0m
-[32mweb3_clientVersion (6)[0m
-[32mweb3_clientVersion (7)[0m
-[32mweb3_clientVersion (8)[0m
-[32mweb3_clientVersion (9)[0m
-[32mweb3_clientVersion (10)[0m
-[32mweb3_clientVersion (11)[0m
-[32mweb3_clientVersion (12)[0m
-[32mweb3_clientVersion (13)[0m
-[32mweb3_clientVersion (14)[0m
-[32mweb3_clientVersion (15)[0m

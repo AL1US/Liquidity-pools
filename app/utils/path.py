@@ -9,11 +9,11 @@ BLOCKCHAIN_DIR = ROOT_DIR / "blockchain"
 ARTIFACTS_DIR = BLOCKCHAIN_DIR / "artifacts/contracts"
 
 # JSON CONTRACT PATHS
-POOLS_JSON_PATH = ARTIFACTS_DIR / "Pool.json" 
-STAKING_JSON_PATH = ARTIFACTS_DIR / "Staking.json" 
-FACTORY_JSON_PATH = ARTIFACTS_DIR / "Factory.json" 
-ROUTER_JSON_PATH = ARTIFACTS_DIR / "Router.json" 
-TOKEN_JSON_PATH = ARTIFACTS_DIR / "Token.json" 
+POOLS_JSON_PATH = ARTIFACTS_DIR / "Pools.sol" / "Pool.json" 
+STAKING_JSON_PATH = ARTIFACTS_DIR / "Staking.sol" / "Staking.json" 
+FACTORY_JSON_PATH = ARTIFACTS_DIR / "Factory.sol" / "Factory.json" 
+ROUTER_JSON_PATH = ARTIFACTS_DIR / "Router.sol" / "Router.json" 
+TOKEN_JSON_PATH = ARTIFACTS_DIR / "Token.sol" / "Token.json" 
 
 # ADDRESSES
 ADDRESSES_JSON_PATH = BLOCKCHAIN_DIR / "addresses/addresses.json"

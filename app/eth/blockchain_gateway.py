@@ -35,7 +35,7 @@ factory_client = BaseContractClient(
 )
 
 router_client = BaseContractClient(
-    json_contract_path=ROUTER_JSON_PATH",
+    json_contract_path=ROUTER_JSON_PATH,
     contract_address=CONTRACT_ADDRESSES["router"]
 )
 
