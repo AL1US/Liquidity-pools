@@ -6,9 +6,10 @@ from app.utils.path import (
     FACTORY_JSON_PATH,
     ROUTER_JSON_PATH,
     TOKEN_JSON_PATH,
-    PROVIDER_URL,
-    CONTRACT_ADDRESSES
+    PROVIDER_URL
 )
+
+from app.utils.addresses import CONTRACT_ADDRESSES
 
 import json
 

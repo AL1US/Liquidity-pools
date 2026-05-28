@@ -174,3 +174,6 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   To:                  0x5fbdb2315678afecb367f032d93f642f64180aa3
 
+[32meth_blockNumber[0m
+[32meth_getBalance[0m
+[32meth_blockNumber[0m

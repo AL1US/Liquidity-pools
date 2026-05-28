@@ -1,21 +1,27 @@
 {% extends 'base.html' %}
 
-{% block auth %}
+{% block body %}
     <div class="auth">
       <h1>Подключение к Metamask</h1>
       <button id="auth">Войти</button>
     </div>
 
     <script type="text/javascript">
+     
+      // Скачен ли metamask у пользователя в браузере
       if (typeof window.ethereum !== 'undefined') {
-        const ethereum = window.ethereum;
-        const button = document.getElementById('auth');
-
+         
+        const ethereum = window.ethereum; // сохраняем ссылку на metamask api 
+        const button = document.getElementById('auth'); // получаем кнопку войти из html (DOM) сверху
+        
+        // Клик по кнопке
         button.addEventListener('click', async () => {
           try {
+            // запрос аккаунтов к metamask. Тут открывается окно с подтверждениями о входе
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
             const selectedAccount = accounts[0];
-            
+
+            // отправка данных на сервер
             const response = await fetch('/login', {
               method: 'POST',
               headers: {
@@ -42,7 +48,7 @@
       }
     </script>
 
-    {# Проверка уведомлений, переданных из FastAPI #}
+    <!--Проверка уведомлений, переданных из FastAPI  -->
     {% if messages %}
         <div class="flash" id="window">
             <figure>
