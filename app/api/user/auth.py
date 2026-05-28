@@ -27,9 +27,9 @@ def login(request: Request, data: LoginRequest):
 
         user_data = factory_client.contract.functions.users(checksum_address).call()
          
-        user_name = pk[0] if isinstance(pk, tuple) else pk
+        is_registered = user_data[0] if isinstance(user_data, tuple) else user_data
         
-        if not user_name:
+        if not is_registered:
             return JSONResponse(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 content={"error": "Ваш адрес не зарегистрирован в системе смарт-контракта."}
