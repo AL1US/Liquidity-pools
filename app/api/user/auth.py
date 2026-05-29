@@ -1,13 +1,16 @@
 import traceback
 
-from fastapi import APIRouter, Form, Request, status
+from fastapi import APIRouter, Form, Request, status, Response
 from fastapi.responses import JSONResponse
 
 from app.utils.frontend import templates
 from app.classes.user import LoginRequest
 from app.eth.blockchain_gateway import factory_client
+import uuid
 
 router = APIRouter()
+
+sessions = {}
 
 @router.get("/login")
 def login(request: Request):
@@ -19,7 +22,7 @@ def login(request: Request):
 
 # апи для пост
 @router.post("/login")
-def login(request: Request, data: LoginRequest):
+def login(request: Request, data: LoginRequest, response: Response):
     pk = data.public_key
     
     try:
@@ -34,23 +37,23 @@ def login(request: Request, data: LoginRequest):
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 content={"error": "Ваш адрес не зарегистрирован в системе смарт-контракта."}
             )
-        
+
+        response.set_cookie(key="address", value=checksum_address)
+
         return {"redirect": "/"}
 
     except Exception as e:
     # потом добавить логирование
-        print("КАКАЯ ТО ОШИБКА ПРИ РЕГИСТРАЦИИ (ВХОД В АККАУНТ)")
+        print("КАКАЯ ТО ОШИБКА ПРИ РЕГИСТРАЦИИ")
         traceback.print_exc()
         
         return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             content={"error": f"Ошибка сервера: {str(e)}"}
         )
-    
-# принять данные
 
-# вызвать метод регистрации если аккаунт не зареган 
-
-# запомнить его в куках или в сессии
-
-# вернуть ошибку или успех
+# Выход
+@router.post("/logout")
+def logout(response: Response):
+    response.delete_cookie("address")
+    return {"redirect": "/login"}

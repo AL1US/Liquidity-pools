@@ -5,7 +5,6 @@ from app.utils.path import (
     STAKING_JSON_PATH,
     FACTORY_JSON_PATH,
     ROUTER_JSON_PATH,
-    TOKEN_JSON_PATH,
     PROVIDER_URL
 )
 
