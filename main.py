@@ -7,9 +7,8 @@ from fastapi.staticfiles import StaticFiles
 from app.utils.path import STATIC_PATH
 from app.utils.frontend import templates
 
-from app.eth.blockchain_gateway import factory_client
-from app.api.user.auth import router as auth_router
-from app.api.user.profile import router as profile_router
+from app.api.endpoints.auth import router as auth_router
+from app.api.endpoints.profile import router as profile_router
 
 from scalar_fastapi import get_scalar_api_reference
 

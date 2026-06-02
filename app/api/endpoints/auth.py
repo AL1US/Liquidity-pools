@@ -4,8 +4,8 @@ from fastapi import APIRouter, Form, Request, status, Response
 from fastapi.responses import JSONResponse
 
 from app.utils.frontend import templates
-from app.classes.user import LoginRequest
-from app.eth.blockchain_gateway import factory_client
+from app.models.user import LoginRequest
+from app.blockchain.clients import factory_client
     
 
 router = APIRouter()

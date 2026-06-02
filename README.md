@@ -51,5 +51,5 @@ npx hardhat run --network localhost scripts/deploy.js
 # Запуск fastAPI
 
 ```
-uv run fastapi dev app/api/main.py --reload
+uv run fastapi dev main.py --reload
 ```
