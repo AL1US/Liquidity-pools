@@ -24,3 +24,11 @@ nav a:hover {
 a {
     text-decoration: none;
 }
+
+.user_data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 80px;
+}

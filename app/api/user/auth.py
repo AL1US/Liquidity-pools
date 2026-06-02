@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from app.utils.frontend import templates
 from app.classes.user import LoginRequest
 from app.eth.blockchain_gateway import factory_client
-import uuid
+    
 
 router = APIRouter()
 

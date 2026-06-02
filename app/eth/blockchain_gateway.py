@@ -5,7 +5,8 @@ from app.utils.path import (
     STAKING_JSON_PATH,
     FACTORY_JSON_PATH,
     ROUTER_JSON_PATH,
-    PROVIDER_URL
+    PROVIDER_URL,
+    TOKEN_JSON_PATH
 )
 
 from app.utils.addresses import CONTRACT_ADDRESSES
@@ -52,4 +53,23 @@ poolKreRtk_client = BaseContractClient(
 poolGerKre_client = BaseContractClient(
     json_contract_path=POOLS_JSON_PATH,
     contract_address=CONTRACT_ADDRESSES["pools"]["poolGerKre"]   
+)
+gerda_client = BaseContractClient(
+    json_contract_path=TOKEN_JSON_PATH,
+    contract_address=CONTRACT_ADDRESSES["tokens"]["gerdaCoin"]   
+)
+
+krendel_client = BaseContractClient(
+    json_contract_path=TOKEN_JSON_PATH,
+    contract_address=CONTRACT_ADDRESSES["tokens"]["krendelCoin"]   
+)
+
+rtk_client = BaseContractClient(
+    json_contract_path=TOKEN_JSON_PATH,
+    contract_address=CONTRACT_ADDRESSES["tokens"]["rtkCoin"]   
+)
+
+professional_client = BaseContractClient(
+    json_contract_path=TOKEN_JSON_PATH,
+    contract_address=CONTRACT_ADDRESSES["tokens"]["professionalCoin"]   
 )
