@@ -44,7 +44,7 @@ def login(request: Request, data: LoginRequest, response: Response):
 
     except Exception as e:
     # потом добавить логирование
-        print("КАКАЯ ТО ОШИБКА ПРИ РЕГИСТРАЦИИ")
+        print("ТЕХНИЧЕСКИЕ ШОКОЛАДКИ ПРИ РЕГИСТРАЦИИ")
         traceback.print_exc()
         
         return JSONResponse(

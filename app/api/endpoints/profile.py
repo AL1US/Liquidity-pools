@@ -1,40 +1,24 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Depends
 from fastapi.responses import RedirectResponse
 
 from app.utils.frontend import templates
-from app.blockchain.clients import (
-    gerda_client,
-    krendel_client,
-    rtk_client,
-    professional_client
-)
+from app.api.services.balance import get_balances
 
-from app.api.deps import get_user_address_from_cookie
+from app.api.deps import get_current_address
 
 router = APIRouter()
 
 @router.get("/profile")
-def profile(request: Request):
-    # проверка на то зареган ли человек
-    pk = get_user_address_from_cookie(request)
-    
-    if pk == "":
-        return RedirectResponse(url="/login", status_code=302)
+def profile(request: Request, address: str = Depends(get_current_address)):
 
-    gerda = gerda_client.contract.functions.balanceOf(pk).call()
-    krendel = krendel_client.contract.functions.balanceOf(pk).call()
-    rtk = rtk_client.contract.functions.balanceOf(pk).call()
-    professional = professional_client.contract.functions.balanceOf(pk).call()
+    balances = get_balances(address)
     
     return templates.TemplateResponse(
         request=request,
         name="profile.html",
         context={
             "request": request,
-            "gerda": gerda,
-            "krendel": krendel,
-            "rtk": rtk,
-            "professional": professional
+            **balances.model_dump() # ** распаковывает словарь. model_dump - штука из pydantic, которая возрващает словарь из полей модели
         }
     )
-    
+
