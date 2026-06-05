@@ -9,6 +9,7 @@ from app.utils.frontend import templates
 
 from app.api.endpoints.auth import router as auth_router
 from app.api.endpoints.profile import router as profile_router
+from app.api.endpoints.swap import router as swap_router
 
 from scalar_fastapi import get_scalar_api_reference
 
@@ -16,6 +17,7 @@ app = FastAPI()
 
 app.include_router(auth_router)
 app.include_router(profile_router)
+app.include_router(swap_router)
 
 app.mount("/static", StaticFiles(directory=STATIC_PATH), name="static")
 

@@ -16,7 +16,7 @@ contract Factory {
     Token public professionalCoin;
 
     // poll objects
-    Pool public poolGerKre;  
+    Pool public poolGerKre;
     Pool public poolKreRtk;
 
     Staking public staking;

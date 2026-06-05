@@ -101,7 +101,7 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
   Gas used:            11634861 of 16777216
-  Block #1:            0x4e101bb550750dd9148d0567239f058e7c0ee384dd6706b6011ec479410ae56b
+  Block #1:            0xb3d68ecfc27014764b6eec638e79674fc12648ab01d457c5890bff67a12fddff
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -135,7 +135,7 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
   Gas used:            953690 of 16777216
-  Block #2:            0x12690ac3ea35ba36b81451437abd7799eb0bb094e4abe1a36a9bced1c871091d
+  Block #2:            0x54c60aafc5e5bf239b22f87e43884e73845219d22a73fabe8d739513fe9a1873
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -174,9 +174,64 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   To:                  0x5fbdb2315678afecb367f032d93f642f64180aa3
 
-[32mnet_version[0m
 [32meth_chainId[0m
 [32meth_accounts[0m
+[32meth_call[0m
+  Contract call:       Factory#users
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x5fbdb2315678afecb367f032d93f642f64180aa3
+
+[32meth_chainId[0m
+[32meth_blockNumber[0m
+[32meth_getBlockByNumber[0m
+[32meth_chainId[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Factory#users
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x5fbdb2315678afecb367f032d93f642f64180aa3
+
+[32meth_chainId[0m
+[32meth_blockNumber[0m
+[32meth_getBalance[0m
+[32meth_blockNumber[0m
+[32meth_blockNumber (2)[0m
+[32meth_blockNumber (3)[0m
+[32meth_blockNumber (4)[0m
+[32meth_blockNumber (5)[0m
+[32meth_blockNumber (6)[0m
+[32meth_getBalance[0m
+[32meth_blockNumber[0m
+[32meth_blockNumber (2)[0m
+[32meth_blockNumber (3)[0m
+[32meth_chainId[0m
 [32meth_call[0m
   Contract call:       Factory#users
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
@@ -211,6 +266,64 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
 
 [32meth_chainId[0m
+[32meth_blockNumber[0m
+[32meth_getBalance[0m
+[32meth_chainId[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
 [32meth_chainId (2)[0m
 [32meth_call[0m
   Contract call:       Token#balanceOf
@@ -267,3 +380,122 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
 
 [32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
+[32meth_blockNumber[0m
+[32meth_blockNumber (2)[0m
+[32meth_blockNumber (3)[0m
+[32meth_chainId[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
+[32mnet_version[0m
+[32mnet_version (2)[0m
+[32mnet_version (3)[0m
+[32mnet_version (4)[0m
