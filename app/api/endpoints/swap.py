@@ -12,3 +12,17 @@ def swap(request: Request, address: str = Depends(get_current_address)):
         name="swap.html",
         context={"request": request}
     )
+    
+# router.post("/swap")
+# def swap(request: Request, address: str = Depends(get_current_address)):
+    
+    
+#     # understand wich pool
+    
+#     # transact witch this pool
+    
+#     # And exceptions and return
+    
+    
+    
+    
