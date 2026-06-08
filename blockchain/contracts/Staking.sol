@@ -22,11 +22,8 @@ contract Staking {
     }
 
     // положить на стэйк
-    function stake(uint _amount) public {
-
-        uint amount = _amount * 10 ** profi.decimals();
-
-        require(_amount > 0, "amount is zero");
+    function stake(uint amount) public {
+        require(amount > 0, "amount is zero");
         require(
             profi.balanceOf(msg.sender) >= amount,
             unicode"Недастаточно LP(profi) токенов на балансе"
@@ -47,7 +44,6 @@ contract Staking {
         totalStaked += amount;               
         
         profi.transferFrom(msg.sender, address(this), amount);
-
     }
 
     // формула для подсчета
@@ -87,7 +83,7 @@ contract Staking {
         return reward;
     }
 
-    // забрать со стэйка
+    // забрать со стэкинга
     function claimReward() public {
         uint reward = calculateReward();
         require(reward > 0, "No reward available");

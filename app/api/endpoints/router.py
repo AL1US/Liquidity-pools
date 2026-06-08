@@ -9,6 +9,7 @@ middle_token = CONTRACT_ADDRESSES["tokens"]["krendelCoin"]
 
 router = APIRouter()
 
+# ВАЖНО - ДОБАВИТЬ ЕЩЕ Depends на то не передаётся ли там случайно 2 одинаковых токена
 @router.post("/router_swap")
 def router_swap(
         address: str = Depends(get_current_address), # От кого выполняем
