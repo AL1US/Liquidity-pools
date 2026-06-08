@@ -5,6 +5,7 @@ from app.utils.frontend import templates
 from app.utils.addresses import CONTRACT_ADDRESSES
 from app.api.services.pools import get_pool_addresses
 from app.api.services.tokens import get_token_addresses
+from app.utils.tokens import TOKEN_MAPPING
 
 from app.blockchain.clients import poolGerKre_client, poolKreRtk_client
 
@@ -44,14 +45,15 @@ def swap(request: Request, address: str = Depends(get_current_address)):
 @router.post("/swap")
 def swap_post(
         request: Request,
-        address: str = Depends(get_current_address),
-        token_client: BaseContractClient = Depends(get_token_client),
-        pool_client: BaseContractClient = Depends(get_pool_client),
+        address: str = Depends(get_current_address), # От кого выполняем
+        pool_client: BaseContractClient = Depends(get_pool_client), # Клиент для транзакци
+        pool_address: str = Form(...), # Адрес для апрува
         token: str = Form(...), # адрес для транзакции
         amount: int = Form(...)
     ):
     try:
-        
+        token_client = TOKEN_MAPPING.get(token.lower())
+        token_client.contract.functions.approve(pool_client.contract.address, 2**256 - 1).transact({"from": address})
         pool_client.contract.functions.swap_token(token, amount).transact({"from": address})
         return {"status": "success", "message": "Транзакция выполнена успешно"}
     
