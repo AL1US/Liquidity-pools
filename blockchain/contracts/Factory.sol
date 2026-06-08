@@ -9,6 +9,8 @@ import "./Router.sol";
 
 contract Factory {
 
+    uint public constant TOKEN_DECIMALS = 10 ** 12;
+
     // token objects
     Token public gerdaCoin;
     Token public krendelCoin;
@@ -45,11 +47,11 @@ contract Factory {
     }
 
     constructor() {
-        gerdaCoin = new Token("GerdaCoin", "GERDA", 100_000, 1 ether);
-        krendelCoin = new Token("KrendelCoin", "KRENDEL", 150_000, 15e17);
-        rtkCoin = new Token("RTKCoin", "RTK", 300_000, 3 ether);
-        professionalCoin = new Token("Professional", "PROFI", 0, 6 ether);
-        
+        gerdaCoin = new Token("GerdaCoin", "GERDA", 100_000, 100_000 * TOKEN_DECIMALS);
+        krendelCoin = new Token("KrendelCoin", "KRENDEL", 150_000, 150_000 * TOKEN_DECIMALS);
+        rtkCoin = new Token("RTKCoin", "RTK", 300_000, 300_000 * TOKEN_DECIMALS);
+        professionalCoin = new Token("Professional", "PROFI", 500_000, 500_000 * TOKEN_DECIMALS);
+                
         staking = new Staking(professionalCoin);   
 
         // создание пользователей remix
@@ -100,12 +102,12 @@ contract Factory {
         // перевод токенов в пулы
         
         // GERDA-KRENDEL: 1500 ETH : 1500 ETH
-        gerdaCoin.transfer(address(poolGerKre), 1500 * 10 ** 12);
-        krendelCoin.transfer(address(poolGerKre), 1000 * 10 ** 12);
+        gerdaCoin.transfer(address(poolGerKre), 1500 * 10 * TOKEN_DECIMALS);
+        krendelCoin.transfer(address(poolGerKre), 1000 * 10 * TOKEN_DECIMALS);
 
         // KRENDEL-RTK: 3000 ETH : 3000 ETH
-        krendelCoin.transfer(address(poolKreRtk), 2000 * 10 ** 12);
-        rtkCoin.transfer(address(poolKreRtk), 1000 * 10 ** 12);
+        krendelCoin.transfer(address(poolKreRtk), 2000 * 10 * TOKEN_DECIMALS);
+        rtkCoin.transfer(address(poolKreRtk), 1000 * 10 * TOKEN_DECIMALS);
     }
 
 }

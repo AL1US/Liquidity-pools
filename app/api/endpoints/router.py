@@ -18,8 +18,21 @@ def router_swap(
     ):
     try:
         token_client = TOKEN_MAPPING.get(token_in.lower())
-        token_client.contract.functions.approve(router_client.contract.address, 2**256 - 1).transact({"from": address})
-        router_client.contract.functions.swapTwoPools(token_in, middle_token, token_out, amount).transact({"from": address})
+        # 1. Спрашиваем у роутера адрес первого пула
+        first_pool_address = router_client.contract.functions.findPool(
+            token_in, middle_token
+        ).call()
+        
+        # 2. Делаем апрув ПЕРВОМУ ПУЛУ, а не роутеру!
+        token_client.contract.functions.approve(
+            first_pool_address, 
+            2**256 - 1
+        ).transact({"from": address})
+        
+        # 3. Делаем свап
+        router_client.contract.functions.swapTwoPools(
+            token_in, middle_token, token_out, amount
+        ).transact({"from": address})
         return {"status": "success", "message": "Транзакция выполнена успешно"}
     
     except Exception as e:

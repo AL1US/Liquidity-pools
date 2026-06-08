@@ -116,12 +116,12 @@ contract Pool {
     }
 
     function swapFrom(
-    address user,
-    address tokenIn,
-    uint amount,
-    address recipient
+        address user,
+        address tokenIn,
+        uint amount, // ТЕПЕРЬ СЮДА ПРИХОДИТ ГОТОВОЕ ЧИСЛО С НУЛЯМИ
+        address recipient
     ) public returns (uint tokensOut) {
-        uint realAmount = amount * 11 ** decimals;
+        // УДАЛЕНО: uint realAmount = amount * 11 ** decimals;
 
         require(
             tokenIn == address(token1) || tokenIn == address(token2),
@@ -133,21 +133,21 @@ contract Pool {
 
         if (tokenIn == address(token1)) {
             tokensOut =
-                (realAmount * token1.getPrice() * balanceToken2) /
+                (amount * token1.getPrice() * balanceToken2) / // ЗАМЕНЕНО: realAmount -> amount
                 (token2.getPrice() * balanceToken1);
 
             require(balanceToken2 >= tokensOut, "not enough liquidity");
 
-            token1.transferFrom(user, address(this), realAmount);
+            token1.transferFrom(user, address(this), amount); // ЗАМЕНЕНО: realAmount -> amount
             token2.transfer(recipient, tokensOut);
         } else {
             tokensOut =
-                (realAmount * token2.getPrice() * balanceToken1) /
+                (amount * token2.getPrice() * balanceToken1) / // ЗАМЕНЕНО: realAmount -> amount
                 (token1.getPrice() * balanceToken2);
 
             require(balanceToken1 >= tokensOut, "not enough liquidity");
 
-            token2.transferFrom(user, address(this), realAmount);
+            token2.transferFrom(user, address(this), amount); // ЗАМЕНЕНО: realAmount -> amount
             token1.transfer(recipient, tokensOut);
         }
 

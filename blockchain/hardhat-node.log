@@ -97,11 +97,11 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
 [32meth_sendTransaction[0m
   Contract deployment: Factory
   Contract address:    0x5fbdb2315678afecb367f032d93f642f64180aa3
-  Transaction:         0x5ff99dd0b6cf92c84ee46930a3955c42fb3e6329fa9a13505ef3007bfc053360
+  Transaction:         0xa8e7739c9c6c53e8b03b6a04cc20d89695ffcbe708b31f3a2e0ebc4005e484b4
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
-  Gas used:            11634849 of 16777216
-  Block #1:            0xc8235a6924c27d12d59d15d8a54e48b2bd10182a06c37e4f69507b3c262d0ada
+  Gas used:            11700897 of 16777216
+  Block #1:            0x79d6177a244569db089096124921df921417f0f0051d2e4e9388dc462abf6301
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -131,11 +131,11 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
 [32meth_sendTransaction[0m
   Contract deployment: Router
   Contract address:    0xe7f1725e7734ce288f8367e1bb143e90bb3f0512
-  Transaction:         0x67329be5684eb067249abb261aabae35a58b92018d35e28011a361a961a69301
+  Transaction:         0xd1cee2fd5f03f8b22911fdbc1a3fc4aa152a4f88fe5fdbf5ac05cd4f2e58f43b
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   Value:               0 ETH
-  Gas used:            790203 of 16777216
-  Block #2:            0x39702daa713aa5ef18d9c4db04aa5a734310a2c5effe6361ebd16d657fe5a09b
+  Gas used:            818971 of 16777216
+  Block #2:            0x714c9e88efc1550520127afac494e2627edab5a6773a0e3b781635b3af7a17c8
 
 [32meth_getTransactionByHash[0m
 [32meth_getTransactionReceipt[0m
@@ -177,6 +177,13 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
 [32meth_chainId[0m
 [32meth_accounts[0m
 [32meth_call[0m
+  Contract call:       Factory#users
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x5fbdb2315678afecb367f032d93f642f64180aa3
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
   Contract call:       Token#balanceOf
   From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
   To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
@@ -203,6 +210,13 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
   To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
 
 [32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Router#findPool
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xe7f1725e7734ce288f8367e1bb143e90bb3f0512
+
+[32meth_chainId[0m
 [32meth_getBlockByNumber[0m
 [32meth_chainId[0m
 [32meth_chainId (2)[0m
@@ -213,23 +227,84 @@ Any funds sent to them on Mainnet or any other live network WILL BE LOST.
 [32meth_feeHistory[0m
 [32meth_sendTransaction[0m
   Contract call:       Token#approve
-  Transaction:         0xa172a1ec490569891ce2f00df506d72031ada396423bef9e2b801e8a5a9ff99b
+  Transaction:         0x5452541fb7aeb598adee8bbbfbe7bb79ee68154e2ab9bec67cabedad5a268e4a
   From:                0x70997970c51812dc3a010c7d01b50e0d17dc79c8
   To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
   Value:               0 ETH
   Gas used:            47264 of 147264
-  Block #3:            0xd24b7dfffe4bacd541ae37e0154f8593ba8860e3d6f5e97858ee1ac111ebdcfb
+  Block #3:            0x4fb4bee66e34193331c141d23d909879c4bbe6578c04acf9ea8aa2130c9880df
 
 [32meth_chainId[0m
 [32meth_getBlockByNumber[0m
 [32meth_chainId[0m
 [32meth_chainId (2)[0m
-[31meth_estimateGas[0m
+[32meth_estimateGas[0m
+[32meth_chainId[0m
+[32meth_getBlockByNumber[0m
+[32meth_feeHistory[0m
+[32meth_sendTransaction[0m
   Contract call:       Router#swapTwoPools
+  Transaction:         0xbd0de355b3f70a61e80bf68793035e3a5d5159ce44ba1bc565134f31c1798ea2
   From:                0x70997970c51812dc3a010c7d01b50e0d17dc79c8
   To:                  0xe7f1725e7734ce288f8367e1bb143e90bb3f0512
   Value:               0 ETH
+  Gas used:            156550 of 296299
+  Block #4:            0x17d3034830b155c37f2aa67edc8634469ac55a2ddb47ba8963611367961f28a3
 
-  Error: VM Exception while processing transaction: reverted with an unrecognized custom error (return data: 0xfb8f41b200000000000000000000000086337ddaf2661a069d0dcb5d160585acc2d15e9a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003916722bc354)
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xa16e02e87b7454126e5e10d957a927a7f5b5d2be
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xb7a5bd0345ef1cc5e66bf61bdec17d2461fbd968
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0xeebe00ac0756308ac4aabfd76c05c4f3088b8883
+
+[32meth_chainId[0m
+[32meth_chainId (2)[0m
+[32meth_call[0m
+  Contract call:       Token#balanceOf
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  To:                  0x10c6e9530f1c1af873a391030a1d9e8ed0630d26
 
 [32meth_chainId[0m

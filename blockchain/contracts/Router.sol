@@ -14,33 +14,32 @@ contract Router {
 
     function swapTwoPools(
         address tokenIn,
-        address middleToken, // промежуточный токен. Например GERDA -> KRENDEL -> RTK
+        address middleToken,
         address tokenOut,
         uint amount
     ) public {
+        // ДОБАВЛЕНО: Сразу скейлим число с фронта до нужных нулей
+        uint realAmount = amount * 10 ** 12; 
+
         Pool firstPool = findPool(tokenIn, middleToken);
         Pool secondPool = findPool(middleToken, tokenOut);
 
-        require(address(firstPool) != address(0), "first pool not found"); // address(0) - иcпользуется как "ничего не найден"
+        require(address(firstPool) != address(0), "first pool not found"); 
         require(address(secondPool) != address(0), "second pool not found");
 
-        // меняем токен обмена на промежуточный токен
-        // отправляем промежуточный токен на адрес роутера
-        uint middleAmount = firstPool.swapFrom( // не испольуем апрув, потомучто владелец сам должен его дать
+        uint middleAmount = firstPool.swapFrom(
             msg.sender,
             tokenIn,
-            amount,
+            realAmount, // ПЕРЕДАЕМ УЖЕ С НУЛЯМИ
             address(this)
         ); 
 
-        // даём апрув на то, чтобы пул мог забрать токен у роутера
-        Token(middleToken).approve(address(secondPool), middleAmount); // апрув именно для контракта
+        Token(middleToken).approve(address(secondPool), middleAmount); 
 
-        // меняем промежуточный токен на окончательный
         secondPool.swapFrom(
             address(this),
             middleToken,
-            middleAmount, // Передаем чистый middleAmount, полученный из первого пула
+            middleAmount, // ПЕРЕДАЕМ КАК ЕСТЬ (УЖЕ С НУЛЯМИ ИЗ ПЕРВОГО ПУЛА)
             msg.sender
         );
     }
