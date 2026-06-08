@@ -25,10 +25,10 @@ a {
     text-decoration: none;
 }
 
-.user_data {
+.center {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 80px;
+    /* margin: 30px; */
 }

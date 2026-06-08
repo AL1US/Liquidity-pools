@@ -5,7 +5,7 @@ class TokenBalances(BaseModel):
     krendel: int
     rtk: int
     professional: int
-    
+
 class TokenAddresses(BaseModel):
     gerda: str 
     krendel: str

@@ -1,20 +1,29 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div>
+<div class="center">
     <h1>Gerda-Krendel</h1>
-    <form action="">
-        <input name="incoming_token" placeholder="Токен обмена">
-        <input name="amount" placeholder="Количество">
+    <form action="/swap" method="POST">
+        <input type="hidden" name="pool_id" value="ger_kre">
+        <select name="token">
+            <option value="{{gerda}}">Gerda</option>
+            <option value="{{Krendel}}">Krendel</option>
+        </select>
+        <input type="number" name="amount" min="0" step="10" placeholder="Количество">
         <button type="submit">Обменять</button>
     </form>
 </div>
-<div>
+
+<div class="center">
     <h1>Krendel-Rtk</h1>
-    <form action="">
+    <form action="/swap" method="POST">
+        <input type="hidden" name="pool_id" value="kre_rtk">
         <select name="token">
-            <option value="{{k}}">Krendel</option>
+            <option value="{{krendel}}">Krendel</option>
+            <option value="{{rtk}}">Rtk</option>
         </select>
+        <input type="number" name="amount" min="0" step="10" placeholder="Количество">
+        <button type="submit">Обменять</button>
     </form>
 </div>
 {% endblock %}
