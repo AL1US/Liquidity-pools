@@ -5,7 +5,8 @@ from app.blockchain.clients import (
     professional_client
 )
 from fastapi.exceptions import HTTPException
-from app.models.tokens import TokenBalances
+from app.models.tokens import TokenBalances, TokenAddresses
+from pathlib import Path
 
 def get_balances(address: str) -> TokenBalances:
     try:
@@ -19,5 +20,6 @@ def get_balances(address: str) -> TokenBalances:
     except Exception as e:
         raise HTTPException(
             status_code=503,
-            detail=f"Failed ro get balances: {str(e)}"
+            detail=f"Failed to get balances: {str(e)}"
         )
+

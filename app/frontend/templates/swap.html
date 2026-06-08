@@ -2,11 +2,19 @@
 
 {% block body %}
 <div>
-    <h1>Ge</h1>
+    <h1>Gerda-Krendel</h1>
     <form action="">
-        <input id="incoming_token" placeholder="Токен обмена">
-        <input id="amount" placeholder="Количество">
+        <input name="incoming_token" placeholder="Токен обмена">
+        <input name="amount" placeholder="Количество">
         <button type="submit">Обменять</button>
+    </form>
+</div>
+<div>
+    <h1>Krendel-Rtk</h1>
+    <form action="">
+        <select name="token">
+            <option value="{{k}}">Krendel</option>
+        </select>
     </form>
 </div>
 {% endblock %}

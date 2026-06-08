@@ -25,15 +25,17 @@ staking_client = BaseContractClient(
     contract_address=CONTRACT_ADDRESSES["staking"]
 )
 
+poolGerKre_client = BaseContractClient(
+    json_contract_path=POOLS_JSON_PATH,
+    contract_address=CONTRACT_ADDRESSES["pools"]["poolGerKre"]   
+)
+
 poolKreRtk_client = BaseContractClient(
     json_contract_path=POOLS_JSON_PATH,
     contract_address=CONTRACT_ADDRESSES["pools"]["poolKreRtk"]
 )
 
-poolGerKre_client = BaseContractClient(
-    json_contract_path=POOLS_JSON_PATH,
-    contract_address=CONTRACT_ADDRESSES["pools"]["poolGerKre"]   
-)
+
 gerda_client = BaseContractClient(
     json_contract_path=TOKEN_JSON_PATH,
     contract_address=CONTRACT_ADDRESSES["tokens"]["gerdaCoin"]   
