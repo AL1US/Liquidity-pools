@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="center">
-    <h1>Gerda-Krendel</h1>
+    <h2>Gerda-Krendel</h2>
     <form action="/swap" method="POST">
         <input type="hidden" name="pool_id" value="ger_kre">
         <select name="token">
@@ -15,7 +15,7 @@
 </div>
 
 <div class="center">
-    <h1>Krendel-Rtk</h1>
+    <h2>Krendel-Rtk</h2>
     <form action="/swap" method="POST">
         <input type="hidden" name="pool_id" value="kre_rtk">
         <select name="token">
@@ -27,8 +27,11 @@
     </form>
 </div>
 
+<br>
+<hr>
+
 <div class="center">
-    <h1>Router</h1>
+    <h2>Router</h2>
     <form action="/router_swap" method="POST">
         <label>Вы отдаете:</label>
         <select name="token_in">

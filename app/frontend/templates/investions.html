@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
 {% block body %}
+<div class="center">
+    <h1>Поднятие ликвидности</h1>
+</div>
 
 <div class="center">
-    <h1>Ликвидность для Gerda-Krendel</h1>
+    <h2>Gerda-Krendel</h2>
     <form action="/liquidity_up" method="POST">
         <input type="hidden" name="pool_id" value="ger_kre">
         <select name="token">
@@ -16,7 +19,7 @@
 </div>
 
 <div class="center">
-    <h1>Ликвидность для Krendel-Rtk</h1>
+    <h2>Krendel-Rtk</h2>
     <form action="/liquidity_up" method="POST">
         <input type="hidden" name="pool_id" value="kre_rtk">
         <select name="token">
@@ -28,6 +31,7 @@
     </form>
 </div>
 <br>
+<hr>
 <div class="center">
     <h1>Стэйкинг</h1>
     <form action="/stake" method="POST">
@@ -36,7 +40,6 @@
         <button type="submit">Застейкать</button>
     </form>
     <form action="/claim_reward" method="POST">
-        <p>Снять с счета</p>
         <p>Доступная награда: {{reward}}</p>
         <button type="submit">Получить</button>
     </form>
