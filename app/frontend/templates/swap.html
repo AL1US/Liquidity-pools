@@ -9,7 +9,7 @@
             <option value="{{gerda}}">Gerda</option>
             <option value="{{krendel}}">Krendel</option>
         </select>
-        <input type="number" name="amount" min="0" step="10" placeholder="Количество">
+        <input type="number" name="amount" min="0" step="10" placeholder="Количество отданных">
         <button type="submit">Обменять</button>
     </form>
 </div>
@@ -22,7 +22,25 @@
             <option value="{{krendel}}">Krendel</option>
             <option value="{{rtk}}">Rtk</option>
         </select>
-        <input type="number" name="amount" min="0" step="10" placeholder="Количество">
+        <input type="number" name="amount" min="0" step="10" placeholder="Количество отданных">
+        <button type="submit">Обменять</button>
+    </form>
+</div>
+
+<div class="center">
+    <h1>Router</h1>
+    <form action="/router_swap" method="POST">
+        <label>Вы отдаете:</label>
+        <select name="token_in">
+            <option value="{{gerda}}">Gerda</option>
+            <option value="{{rtk}}">Rtk</option>
+        </select>
+        <label>Вы получаете:</label>
+        <select name="token_out">
+            <option value="{{gerda}}">Gerda</option>
+            <option value="{{rtk}}">Rtk</option>
+        </select>
+        <input type="number" name="amount" min="0" step="10" placeholder="Количество отданных">
         <button type="submit">Обменять</button>
     </form>
 </div>

@@ -40,7 +40,7 @@ contract Router {
         secondPool.swapFrom(
             address(this),
             middleToken,
-            middleAmount / 10 ** Token(middleToken).decimals(),
+            middleAmount, // Передаем чистый middleAmount, полученный из первого пула
             msg.sender
         );
     }
