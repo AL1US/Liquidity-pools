@@ -20,7 +20,6 @@ async def investions(request: Request, address: str = Depends(get_current_addres
     return templates.TemplateResponse(
         request=request,
         name="investions.html",
-        # Очень ужасно передаётся, по хорошему где то записать 1 объект и потом его просто распоковать
         context={
             "request": request,
             **tokens.model_dump(),

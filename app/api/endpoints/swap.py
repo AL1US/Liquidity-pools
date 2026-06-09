@@ -29,7 +29,6 @@ async def swap(request: Request, address: str = Depends(get_current_address)):
 
 @router.post("/swap")
 async def swap_post(
-        request: Request,
         address: str = Depends(get_current_address), # От кого выполняем
         pool_client: BaseContractClient = Depends(get_pool_client), # Клиент для транзакци
         token: str = Form(...), # адрес для транзакции

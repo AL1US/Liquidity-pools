@@ -35,7 +35,6 @@ poolKreRtk_client = BaseContractClient(
     contract_address=CONTRACT_ADDRESSES["pools"]["poolKreRtk"]
 )
 
-
 gerda_client = BaseContractClient(
     json_contract_path=TOKEN_JSON_PATH,
     contract_address=CONTRACT_ADDRESSES["tokens"]["gerdaCoin"]   
