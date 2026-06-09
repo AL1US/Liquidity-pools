@@ -22,14 +22,12 @@ def login(request: Request):
 
 # апи для пост
 @router.post("/login")
-def login(request: Request, data: LoginRequest, response: Response):
+async def login(data: LoginRequest, response: Response):
     pk = data.public_key
     
     try:
         checksum_address = factory_client.w3.to_checksum_address(pk)
-
-        user_data = factory_client.contract.functions.users(checksum_address).call()
-         
+        user_data = await factory_client.contract.functions.users(checksum_address).call()
         is_registered = user_data[0] if isinstance(user_data, tuple) else user_data
         
         if not is_registered:

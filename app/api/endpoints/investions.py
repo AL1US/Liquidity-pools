@@ -12,10 +12,10 @@ from app.blockchain.blockchain_gateway import BaseContractClient
 router = APIRouter()
 
 @router.get("/investions")
-def investions(request: Request, address: str = Depends(get_current_address)):
+async def investions(request: Request, address: str = Depends(get_current_address)):
 
     tokens = get_token_addresses(CONTRACT_ADDRESSES["tokens"])
-    reward = staking_client.contract.functions.calculateReward().call({"from": address})
+    reward = await staking_client.contract.functions.calculateReward().call({"from": address})
 
     return templates.TemplateResponse(
         request=request,
@@ -31,7 +31,7 @@ def investions(request: Request, address: str = Depends(get_current_address)):
     )
 
 @router.post("/liquidity_up")
-def liquidity_up(
+async def liquidity_up(
         address: str = Depends(get_current_address), # От кого выполняем
         pool_client: BaseContractClient = Depends(get_pool_client), # Клиент для транзакци
         token: str = Form(...), # адрес для транзакции
@@ -39,8 +39,8 @@ def liquidity_up(
     ):
     try:
         token_client = TOKEN_MAPPING.get(token.lower())
-        token_client.contract.functions.approve(pool_client.contract.address, 2**256 - 1).transact({"from": address})
-        pool_client.contract.functions.liquidityUp(token, amount).transact({"from": address})
+        await token_client.contract.functions.approve(pool_client.contract.address, 2**256 - 1).transact({"from": address})
+        await pool_client.contract.functions.liquidityUp(token, amount).transact({"from": address})
         return {"status": "success", "message": "Транзакция выполнена успешно"}
     
     except Exception as e:
@@ -48,26 +48,26 @@ def liquidity_up(
 
 
 @router.post("/stake")
-def stake(
+async def stake(
         address: str = Depends(get_current_address), # От кого выполняем
         token: str = Form(...),
         amount: int = Form(...)
     ):
     try:
         token_client = TOKEN_MAPPING.get(token.lower())
-        token_client.contract.functions.approve(staking_client.contract.address, 2**256 - 1).transact({"from": address})
-        staking_client.contract.functions.stake(amount).transact({"from": address})
+        await token_client.contract.functions.approve(staking_client.contract.address, 2**256 - 1).transact({"from": address})
+        await staking_client.contract.functions.stake(amount).transact({"from": address})
         return {"status": "success", "message": "Транзакция выполнена успешно"}
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Blockchain error: {str(e)}")
 
 @router.post("/claim_reward")
-def claim_reward(
+async def claim_reward(
         address: str = Depends(get_current_address),
     ):
     try:
-        staking_client.contract.functions.claimReward().transact({"from": address})
+        await staking_client.contract.functions.claimReward().transact({"from": address})
         return {"status": "success", "message": "Транзакция выполнена успешно"}
     
     except Exception as e:

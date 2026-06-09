@@ -12,14 +12,13 @@ from app.blockchain.blockchain_gateway import BaseContractClient
 router = APIRouter()
 
 @router.get("/swap")
-def swap(request: Request, address: str = Depends(get_current_address)):
+async def swap(request: Request, address: str = Depends(get_current_address)):
 
     tokens = get_token_addresses(CONTRACT_ADDRESSES["tokens"])
 
     return templates.TemplateResponse(
         request=request,
         name="swap.html",
-        # Очень ужасно передаётся, по хорошему где то записать 1 объект и потом его просто распоковать
         context={
             "request": request,
             **tokens.model_dump(),
@@ -29,7 +28,7 @@ def swap(request: Request, address: str = Depends(get_current_address)):
     )
 
 @router.post("/swap")
-def swap_post(
+async def swap_post(
         request: Request,
         address: str = Depends(get_current_address), # От кого выполняем
         pool_client: BaseContractClient = Depends(get_pool_client), # Клиент для транзакци
@@ -38,8 +37,8 @@ def swap_post(
     ):
     try:
         token_client = TOKEN_MAPPING.get(token.lower())
-        token_client.contract.functions.approve(pool_client.contract.address, 2**256 - 1).transact({"from": address})
-        pool_client.contract.functions.swap_token(token, amount).transact({"from": address})
+        await token_client.contract.functions.approve(pool_client.contract.address, 2**256 - 1).transact({"from": address})
+        await pool_client.contract.functions.swap_token(token, amount).transact({"from": address})
         return {"status": "success", "message": "Транзакция выполнена успешно"}
     
     except Exception as e:
