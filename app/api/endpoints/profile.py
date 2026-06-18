@@ -9,9 +9,9 @@ from app.api.deps import get_current_address
 router = APIRouter()
 
 @router.get("/profile")
-def profile(request: Request, address: str = Depends(get_current_address)):
+async def profile(request: Request, address: str = Depends(get_current_address)):
 
-    balances = get_balances(address)
+    balances = await get_balances(address)
     
     return templates.TemplateResponse(
         request=request,

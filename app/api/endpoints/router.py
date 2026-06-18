@@ -11,7 +11,7 @@ router = APIRouter()
 
 # ВАЖНО - ДОБАВИТЬ ЕЩЕ Depends на то не передаётся ли там случайно 2 одинаковых токена
 @router.post("/router_swap")
-def router_swap(
+async def router_swap(
         address: str = Depends(get_current_address), # От кого выполняем
         token_in: str = Form(...), 
         token_out: str = Form(...),
@@ -20,18 +20,18 @@ def router_swap(
     try:
         token_client = TOKEN_MAPPING.get(token_in.lower())
         # 1. Спрашиваем у роутера адрес первого пула
-        first_pool_address = router_client.contract.functions.findPool(
+        first_pool_address = await router_client.contract.functions.findPool(
             token_in, middle_token
         ).call()
         
         # 2. Делаем апрув ПЕРВОМУ ПУЛУ, а не роутеру!
-        token_client.contract.functions.approve(
+        await token_client.contract.functions.approve(
             first_pool_address, 
             2**256 - 1
         ).transact({"from": address})
         
         # 3. Делаем свап
-        router_client.contract.functions.swapTwoPools(
+        await router_client.contract.functions.swapTwoPools(
             token_in, middle_token, token_out, amount
         ).transact({"from": address})
         return {"status": "success", "message": "Транзакция выполнена успешно"}
